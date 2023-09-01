@@ -1,0 +1,35 @@
+- case_id: 1
+  case_title: 登录
+  interface: 正常流程
+  url: http://127.0.0.1:5000/user_login
+  case_data: { 'username': "xiaosun","passwd": '123456789' }
+  expect: {"code": 1000, "msg": "登录成功"}
+
+- case_id: 2
+  case_title: 登录
+  interface: 用户名错误
+  url: http://127.0.0.1:5000/user_login
+  case_data: { 'username': "xiaohan","password": '123456789' }
+  expect: {"code": 1003, "msg": "用户名或者密码错误"}
+
+- case_id: 3
+  case_title: 登录
+  interface: 用户名为空
+  url: http://127.0.0.1:5000/user_login
+  case_data: { 'username': "","password": '123456789'}
+  expect: {"code": 1001, "msg": "用户名不能为空"}
+
+- case_id: 4
+  case_title: 登录
+  interface: 密码错误
+  url: http://127.0.0.1:5000/user_login
+  case_data: { 'username': "xiaosun","password": 'a12345678' }
+  expect: {"code": 1003, "msg": "用户名或者密码错误"}
+
+- case_id: 5
+  case_title: 登录
+  interface: 密码为空
+  url: http://127.0.0.1:5000/user_login
+  case_data: { 'username': "xiaosun","password": '' }
+  expect: {"code": 1002, "msg": "密码不能为空"}
+...

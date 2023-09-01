@@ -1,0 +1,6 @@
+2023-02-21 10:03:29,279 -[test_login.py - 43] -ERROR:测试失败，期望结果为:{'code': 1000, 'msg': '登录成功'},实际结果为:{'code': 1000, 'msg': '登录成功'}
+2023-02-21 10:03:29,279 -[test_login.py - 44] -ERROR:assert '登录成功' == {'code': 1000, 'msg': '登录成功'}
+Traceback (most recent call last):
+  File "D:\TDpytest\test_cases\test_business\test_login\test_login.py", line 39, in test_login
+    assert res['msg'] == case['expect']
+AssertionError: assert '登录成功' == {'code': 1000, 'msg': '登录成功'}
